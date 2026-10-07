@@ -1,0 +1,71 @@
+# ============================================================
+#  SwiftPvP-Guild - interfaces/war-view.yml
+#  Une interface = un fichier. Tout est modifiable : title, size (9 à 54, multiple de 9),
+#  filler, decorations, et pour chaque item : slot, material, name, lore, amount, glow,
+#  custom-model-data, hide-flags, hide-tooltip, skull-viewer, enabled (false = item retiré),
+#  permission (permission de rôle requise pour voir l'item).
+#  Couleurs avec &. Variables entre accolades propres à chaque interface (voir plus bas).
+#  Les placeholders PlaceholderAPI (%...%) fonctionnent dans les noms et lores.
+#  /guild reload recharge ce fichier.
+# ============================================================
+
+# ------------------------------------------------------------
+# Suivi d'une guerre
+# info : {state} {objective} {time} {label-a} {label-b} {pa} {pb} {result}
+# side-a-entry / side-b-entry : {tag} {points} {kills} {deaths} {kdr}
+# ------------------------------------------------------------
+title: "&8Guerre"
+size: 54
+filler:
+  enabled: false
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+side-a-slots: "18-26"
+side-b-slots: "36-44"
+texts:
+  active: "&aEn cours"
+  ended: "&7Terminée"
+  time-left: "&7Temps restant : &f{time}"
+  duration: "&7Durée : &f{minutes} minutes"
+  draw: "&eÉgalité"
+  winner: "&aVainqueur : &f{winner}"
+items:
+  info:
+    slot: 4
+    material: NETHER_STAR
+    name: "&c&lWAR"
+    lore:
+      - "{state}"
+      - "&7Objectif : &f{objective} points"
+      - "{time}"
+      - "&9{label-a} : &f{pa} pts"
+      - "&c{label-b} : &f{pb} pts"
+      - "{result}"
+  versus:
+    slot: 31
+    material: IRON_SWORD
+    name: "&f&lVS"
+  side-a-entry:
+    material: BLUE_BANNER
+    name: "&9{tag}"
+    lore:
+      - "&7Points : &f{points}"
+      - "&7Kills : &f{kills}"
+      - "&7Morts : &f{deaths}"
+      - "&7KDR : &f{kdr}"
+  side-b-entry:
+    material: RED_BANNER
+    name: "&c{tag}"
+    lore:
+      - "&7Points : &f{points}"
+      - "&7Kills : &f{kills}"
+      - "&7Morts : &f{deaths}"
+      - "&7KDR : &f{kdr}"
+  missing:
+    slot: 22
+    material: BARRIER
+    name: "&cGuerre introuvable"
+  back:
+    slot: 49
+    material: ARROW
+    name: "&7Retour"

@@ -1,0 +1,129 @@
+# ============================================================
+#  SwiftPvP-Guild  -  par koegoated
+# ============================================================
+
+# Permissions administratives du plugin (séparées des permissions de rôles).
+permissions:
+  use: swiftguild.use
+  reload: swiftguild.admin.reload
+  enable: swiftguild.admin.enable
+  disable: swiftguild.admin.disable
+
+# ------------------------------------------------------------
+# Guildes
+# Permissions de rôle disponibles :
+#   INVITE, KICK, MANAGE_ROLES, MANAGE_ALLIANCES, MANAGE_ENEMIES, START_WAR, CALLOUT
+# Le rôle "owner-role" possède toutes les permissions (non modifiable).
+# Ces rôles sont copiés dans chaque nouvelle Guild puis modifiables par la Guild.
+# ------------------------------------------------------------
+guild:
+  name-pattern: "[A-Za-z0-9]{3,16}"
+  tag-pattern: "[A-Za-z0-9]{3,5}"
+  invite-expire-seconds: 60
+  roles:
+    owner-role: Leader
+    default-role: Member
+    definitions:
+      Leader: []
+      Officer: [INVITE, KICK, MANAGE_ENEMIES, CALLOUT]
+      Member: []
+
+# ------------------------------------------------------------
+# Alliances
+# Permissions de rôle d'alliance : ADD_GUILD, REMOVE_GUILD, MANAGE_ROLES
+# ------------------------------------------------------------
+alliance:
+  name-pattern: "[A-Za-z0-9_]{3,16}"
+  tag-pattern: "[A-Za-z0-9]{2,5}"
+  roles:
+    owner-role: Leader
+    default-role: Member
+    definitions:
+      Leader: []
+      Officer: [ADD_GUILD, REMOVE_GUILD]
+      Member: []
+
+# ------------------------------------------------------------
+# Tags ({tag} = tag de la guilde ou de l'alliance)
+# ------------------------------------------------------------
+tags:
+  # {color} = couleur du tag de la guilde (aussi utilisée pour la bannière du menu)
+  guild-format: "{color}[{tag}]&r"
+  default-color: "f"
+  alliance-format: "&d[{tag}]&r"
+  enemy-format: "&c[{tag}]&r"
+  # Affichage du tag d'alliance par défaut (chaque joueur peut le changer)
+  alliance-tag-default-visible: true
+  # Tag des ennemis affiché en rouge (par rapport à la guilde du spectateur)
+  enemy-tag-red: true
+  # Glowing sur les joueurs des guildes ennemies
+  enemy-glowing: true
+  # Préfixe au-dessus de la tête (équipes du scoreboard)
+  nametag: true
+  # Préfixe dans le chat public
+  chat-prefix: true
+
+# ------------------------------------------------------------
+# Callout (Title / Subtitle) : durées et casse. Les textes sont dans messages.yml
+# (callout-title / callout-subtitle)
+# ------------------------------------------------------------
+callout:
+  uppercase: true
+  fade-in-ticks: 10
+  stay-ticks: 70
+  fade-out-ticks: 20
+
+# ------------------------------------------------------------
+# Alliés : valeur par défaut de l'option personnelle (/guild protect on|off)
+# ------------------------------------------------------------
+allies:
+  damage-protection-default: true
+
+# ------------------------------------------------------------
+# Guerre (points = kills uniquement)
+# ------------------------------------------------------------
+war:
+  points-per-kill: 10
+  default-duration-minutes: 60
+  duration-step-minutes: 5
+  min-duration-minutes: 5
+  max-duration-minutes: 1440
+  default-objective-points: 1000
+  points-step: 100
+  min-objective-points: 100
+  max-objective-points: 100000
+
+# ------------------------------------------------------------
+# Statistiques
+# source : SWIFTPVP_STATS (via PlaceholderAPI) ou VANILLA.
+# Si SwiftPvP-Stats / PlaceholderAPI est absent, ou si un placeholder ne renvoie
+# pas un nombre, les statistiques vanilla du serveur sont utilisées.
+# ADAPTEZ les placeholders ci-dessous à ceux réellement fournis par SwiftPvP-Stats.
+# ------------------------------------------------------------
+stats:
+  source: SWIFTPVP_STATS
+  placeholders:
+    kills: "%swiftstats_kills%"
+    deaths: "%swiftstats_deaths%"
+    playtime: "%swiftstats_playtime%"
+  # Unité du placeholder playtime : TICKS, SECONDS, MINUTES, HOURS
+  playtime-unit: SECONDS
+  # Un joueur est "actif" s'il s'est connecté dans les X derniers jours
+  active-days: 7
+  cache-seconds: 30
+
+ranking:
+  # kills, deaths, kdr, playtime
+  sort-by: kills
+  cache-seconds: 10
+
+placeholders:
+  no-guild: "-"
+  empty-rank: "-"
+
+# ------------------------------------------------------------
+# Interface de création de guilde (/guild)
+# ------------------------------------------------------------
+creation:
+  # Mot à taper dans le chat pour annuler la saisie du nom / tag
+  cancel-word: cancel

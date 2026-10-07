@@ -1,0 +1,178 @@
+# ============================================================
+#  SwiftPvP-Guild - messages.yml
+#  Tous les messages du plugin (chat, erreurs, aide, stats, formats de chat, callout...).
+#
+#  DÉSACTIVER UN MESSAGE (il ne s'affiche plus du tout) :
+#    1) remplacer son texte par  false        ->   no-permission: false
+#    2) ou l'écrire en section avec deny: true :
+#         no-permission:
+#           text: "&cVous n'avez pas la permission."
+#           deny: true
+#  Mettre deny: false (ou le retirer) le réactive.
+#  Si vous supprimez une clé du fichier, elle est automatiquement rajoutée
+#  (avec sa valeur par défaut) au prochain démarrage / reload.
+#
+#  Variables : {player} {name} {tag} {guild} {message} ... selon le message.
+#  Les couleurs utilisent le code &.
+#  Les textes des interfaces (menus) sont dans le dossier interfaces/ (un fichier par interface).
+# ============================================================
+
+prefix: '&8[&bGuild&8] &7'
+no-permission: '&cVous n''avez pas la permission.'
+no-role-permission: '&cVotre rôle ne permet pas cette action.'
+player-only: '&cCommande réservée aux joueurs.'
+disabled: '&cLe système de Guild est désactivé.'
+already-enabled: '&cLe système est déjà activé.'
+already-disabled: '&cLe système est déjà désactivé.'
+enabled: '&aSystème de Guild activé.'
+disabled-done: '&eSystème de Guild désactivé.'
+reloaded: '&aConfiguration rechargée.'
+usage: '&cUtilisation : &f{usage}'
+help:
+- '&8&m          &r &b&lSwiftPvP-Guild &8&m          '
+- '&f/guild create <nom> <tag> &7- Créer une guilde'
+- '&f/guild disband &7- Supprimer votre guilde'
+- '&f/guild leave &7- Quitter votre guilde'
+- '&f/guild invite <joueur> &7- Inviter un joueur'
+- '&f/guild accept &7- Accepter une invitation'
+- '&f/guild kick <joueur> &7- Expulser un membre'
+- '&f/guild stats [guilde] &7- Statistiques de guilde'
+- '&f/guild callout <message> &7- Message à toute la guilde'
+- '&f/guild chat [message] &7- Chat de guilde'
+- '&f/guild role <list|create|delete|give|remove|perm> &7- Rôles de guilde'
+- '&f/guild alliance <...> &7- Alliances (create, add, remove, leave, disband, chat, chataccess, tag, stats, role)'
+- '&f/guild enemy <add|remove|list> [guilde] &7- Ennemis'
+- '&f/guild protect <on|off> &7- Protection perso contre les dégâts alliés'
+- '&f/guild war &7- Interface de guerre'
+no-guild: '&cVous n''avez pas de guilde.'
+already-in-guild: '&cVous êtes déjà dans une guilde.'
+invalid-name: '&cNom invalide : lettres et chiffres uniquement, 3 caractères minimum. Les caractères spéciaux ne fonctionnent pas.'
+invalid-tag: '&cTag invalide : lettres et chiffres uniquement, 3 caractères minimum. Les caractères spéciaux ne fonctionnent pas.'
+name-taken: '&cCe nom ou ce tag est déjà utilisé.'
+guild-created: '&aGuilde &f{name} &7[{tag}] &acréée.'
+guild-disbanded: '&cLa guilde &f{name} &ca été supprimée.'
+not-owner: '&cSeul le propriétaire peut faire ça.'
+in-war: '&cImpossible : une guerre est en cours.'
+left-guild: '&eVous avez quitté la guilde &f{name}&e.'
+member-left: '&e{player} a quitté la guilde.'
+leader-cannot-leave: '&cVous êtes le seul propriétaire : donnez d''abord ce rôle à quelqu''un.'
+player-not-found: '&cJoueur introuvable (il doit être en ligne).'
+target-has-guild: '&cCe joueur a déjà une guilde.'
+invite-sent: '&aInvitation envoyée à &f{player}&a.'
+invite-received: '&e{player} vous invite dans la guilde &f{guild} &7[{tag}]&e. Tapez &f/guild accept&e.'
+invite-none: '&cAucune invitation en attente.'
+invite-expired: '&cInvitation expirée.'
+joined-guild: '&aVous avez rejoint la guilde &f{name} &7[{tag}]&a.'
+member-joined: '&a{player} a rejoint la guilde.'
+not-member: '&cCe joueur n''est pas membre.'
+cannot-kick: '&cVous ne pouvez pas expulser ce joueur.'
+kicked-target: '&cVous avez été expulsé de la guilde &f{name}&c.'
+kicked-sender: '&a{player} a été expulsé.'
+guild-not-found: '&cGuilde introuvable.'
+alliance-not-found: '&cAlliance introuvable.'
+no-alliance: '&cVotre guilde n''est dans aucune alliance.'
+callout-sent: '&aCallout envoyé.'
+chat-on: '&aChat de guilde activé.'
+chat-off: '&eChat de guilde désactivé.'
+chat-alliance-on: '&aChat d''alliance activé.'
+chat-alliance-off: '&eChat d''alliance désactivé.'
+alliance-no-chat-access: '&cL''accès au chat d''alliance n''est pas activé pour votre guilde.'
+role-list-header: '&bRôles :'
+role-list-line: '&f{role} &8: &7{perms}'
+role-created: '&aRôle &f{role} &acréé.'
+role-exists: '&cCe rôle existe déjà.'
+role-invalid-name: '&cNom de rôle invalide (2-16 caractères : lettres, chiffres, _).'
+role-deleted: '&aRôle &f{role} &asupprimé.'
+role-not-found: '&cRôle introuvable.'
+role-protected: '&cCe rôle est protégé.'
+role-given: '&aRôle &f{role} &aattribué à &f{player}&a.'
+role-removed: '&aRôle retiré à &f{player} &7(retour à {role})&a.'
+role-perm-set: '&aPermission &f{perm} &7du rôle &f{role} &a: &f{value}'
+invalid-perm: '&cPermission invalide. Disponibles : &f{perms}'
+owner-only: '&cSeul un propriétaire peut modifier ce rôle.'
+alliance-created: '&aAlliance &f{name} &7[{tag}] &acréée.'
+alliance-exists: '&cCe nom ou ce tag d''alliance existe déjà.'
+already-in-alliance: '&cVotre guilde est déjà dans une alliance.'
+alliance-guild-added: '&aLa guilde &f{guild} &aa rejoint l''alliance.'
+alliance-joined: '&aVotre guilde a rejoint l''alliance &f{alliance} &7[{tag}]&a.'
+alliance-guild-removed: '&aLa guilde &f{guild} &aa été retirée de l''alliance.'
+alliance-kicked: '&cVotre guilde a été retirée de l''alliance &f{alliance}&c.'
+alliance-left: '&eVotre guilde a quitté l''alliance &f{alliance}&e.'
+alliance-disbanded: '&cL''alliance &f{alliance} &cest dissoute.'
+alliance-no-owner: '&cL''alliance n''aurait plus de propriétaire : transférez d''abord le rôle.'
+alliance-chat-access-set: '&aAccès au chat d''alliance pour votre guilde : &f{value}'
+alliance-tag-set: '&aAffichage de votre tag d''alliance : &f{value}'
+target-in-alliance: '&cCette guilde est déjà dans une alliance.'
+target-not-in-alliance: '&cCette guilde n''est pas dans votre alliance.'
+cannot-remove-self: '&cUtilisez /guild alliance leave.'
+enemy-added: '&aLa guilde &f{guild} &aest maintenant ennemie.'
+enemy-removed: '&aLa guilde &f{guild} &an''est plus ennemie.'
+enemy-self: '&cVous ne pouvez pas vous définir comme ennemi.'
+enemy-already: '&cCette guilde est déjà ennemie.'
+enemy-not: '&cCette guilde n''est pas ennemie.'
+enemy-list-header: '&cGuildes ennemies :'
+enemy-list-line: '&f{name} &7[{tag}]'
+protect-set: '&aProtection contre les dégâts alliés : &f{value}'
+ally-hit-blocked: '&cProtection alliés active : /guild protect off pour frapper un allié.'
+stats-guild:
+- '&b&l{name} &8[{tag}]'
+- '&7Joueurs : &f{members}'
+- '&7Joueurs actifs : &f{active}'
+- '&7Kills : &f{kills}'
+- '&7Morts : &f{deaths}'
+- '&7KDR : &f{kdr}'
+- '&7Playtime : &f{playtime}'
+stats-alliance:
+- '&d&lALLIANCE : &f{guild-tags}'
+- '&7Guilds : &f{guilds}'
+- '&7Joueurs : &f{members}'
+- '&7Joueurs actifs : &f{active}'
+- '&7Kills : &f{kills}'
+- '&7Morts : &f{deaths}'
+- '&7KDR : &f{kdr}'
+- '&7Playtime : &f{playtime}'
+war-err-no-target: '&cSélectionnez au moins un adversaire.'
+war-err-overlap: '&cUne guilde ne peut pas être dans les deux camps.'
+war-err-busy: '&cUne des guildes est déjà en guerre.'
+war-started: '&c&lGUERRE &f{a} &7VS &f{b} &8| &7Objectif : &f{objective} pts &8| &7Durée : &f{minutes} min'
+war-ended-win: '&c&lGUERRE TERMINÉE &f{winner} &7l''emporte contre &f{loser} &7avec &f{points} pts.'
+war-ended-draw: '&c&lGUERRE TERMINÉE &7égalité entre &f{a} &7et &f{b}&7.'
+chat-guild-format: '&8[&bG&8] &f{player} &8: &7{message}'
+chat-alliance-format: '&8[&dAlliance&8] &f{player} &8: &7{message}'
+callout-title: '&b&l{tag}'
+callout-subtitle: '&f&l{message}'
+value-on: 'ON'
+value-off: 'OFF'
+create-prompt-name: '&eÉcrivez le &fNOM &ede la guilde dans le chat &7(ou &f{cancel}&7 pour annuler).'
+create-prompt-tag: '&eÉcrivez le &fTAG &ede la guilde dans le chat &7(ou &f{cancel}&7 pour annuler).'
+create-prompt-cancelled: '&eSaisie annulée.'
+create-incomplete: '&cImpossible de créer la guilde : renseignez un nom et un tag valides et disponibles.'
+usage-create: /guild create <nom> <tag>
+usage-invite: /guild invite <joueur>
+usage-kick: /guild kick <joueur>
+usage-callout: /guild callout <message>
+usage-protect: /guild protect <on|off>
+usage-enemy: /guild enemy <add|remove|list> [guilde]
+usage-enemy-target: /guild enemy <add|remove> <guilde>
+usage-alliance: /guild alliance <create|add|remove|leave|disband|chat|chataccess|tag|stats|role>
+usage-alliance-create: /guild alliance create <nom> <tag>
+usage-alliance-add: /guild alliance add <guilde>
+usage-alliance-remove: /guild alliance remove <guilde>
+usage-alliance-chataccess: /guild alliance chataccess <on|off>
+usage-alliance-tag: /guild alliance tag <on|off>
+usage-role-create: /guild role create <nom>
+usage-role-delete: /guild role delete <nom>
+usage-role-give: /guild role give <joueur> <rôle>
+usage-role-remove: /guild role remove <joueur>
+usage-role-perm: /guild role perm <rôle> <permission> <true|false>
+usage-role-main: /guild role <list|create|delete|give|remove|perm>
+usage-alliance-role-create: /guild alliance role create <nom>
+usage-alliance-role-delete: /guild alliance role delete <nom>
+usage-alliance-role-give: /guild alliance role give <joueur> <rôle>
+usage-alliance-role-remove: /guild alliance role remove <joueur>
+usage-alliance-role-perm: /guild alliance role perm <rôle> <permission> <true|false>
+usage-alliance-role-main: /guild alliance role <list|create|delete|give|remove|perm>
+create-name-taken: '&cLe nom &f{value} &cn''est pas disponible.'
+create-tag-taken: '&cLe tag &f{value} &cn''est pas disponible.'
+guild-chat-muted: '&cLe chat de guilde est muet.'
+menu-soon: '&eLe menu &f{menu} &esera bientôt disponible.'

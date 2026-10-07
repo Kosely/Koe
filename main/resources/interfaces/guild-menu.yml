@@ -1,0 +1,146 @@
+# ============================================================
+#  SwiftPvP-Guild - interfaces/guild-menu.yml
+#  Une interface = un fichier. Tout est modifiable : title, size (9 à 54, multiple de 9),
+#  filler, decorations, et pour chaque item : slot, material, name, lore, amount, glow,
+#  custom-model-data, hide-flags, hide-tooltip, skull-viewer, enabled (false = item retiré),
+#  permission (permission de rôle requise pour voir l'item).
+#  Couleurs avec &. Variables entre accolades propres à chaque interface (voir plus bas).
+#  Les placeholders PlaceholderAPI (%...%) fonctionnent dans les noms et lores.
+#  /guild reload recharge ce fichier.
+# ============================================================
+
+# ------------------------------------------------------------
+# Menu de la guilde (/guild avec une guilde)
+#  - "guild-menu"       : membres avec au moins une permission de gestion (owner inclus)
+#  - "guild-menu-basic" : joueur sans permission (moins d'items)
+#  Un item peut avoir  permission: <PERMISSION_DE_ROLE>  (ex. MANAGE_ROLES) : il n'est alors
+#  affiché qu'aux membres qui l'ont (l'owner a toutes les permissions).
+#  Placeholders propres : {guild_name} {guild_tag} {guild_color} {guild_owner} {guild_created}
+#  {guild_motd} {guild_role} {guild_chat} {guild_members} {guild_online} {player}
+#  Les placeholders PlaceholderAPI (%swiftguild_...%) fonctionnent aussi dans les noms et lores.
+#  La bannière prend la couleur du tag de la guilde (banner-colors).
+# ------------------------------------------------------------
+title: "&8GUILD"
+size: 45
+full-layout-permissions: [INVITE, KICK, MANAGE_ROLES, MANAGE_ALLIANCES, MANAGE_ENEMIES, START_WAR, CALLOUT]
+filler:
+  enabled: false
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+decorations:
+  glass:
+    slots: "0,1,7,8,9,17,27,35,36,37,43,44"
+    material: LIGHT_BLUE_STAINED_GLASS_PANE
+    name: " "
+    hide-tooltip: true
+banner-colors:
+  "0": BLACK_BANNER
+  "1": BLUE_BANNER
+  "2": GREEN_BANNER
+  "3": CYAN_BANNER
+  "4": RED_BANNER
+  "5": PURPLE_BANNER
+  "6": ORANGE_BANNER
+  "7": LIGHT_GRAY_BANNER
+  "8": GRAY_BANNER
+  "9": BLUE_BANNER
+  "a": LIME_BANNER
+  "b": LIGHT_BLUE_BANNER
+  "c": RED_BANNER
+  "d": MAGENTA_BANNER
+  "e": YELLOW_BANNER
+  "f": WHITE_BANNER
+texts:
+  date-format: "dd/MM/yyyy"
+  no-motd: "&7Aucun MOTD"
+  chat-muted: "&cMute"
+  chat-active: "&aActif"
+  menu-members: "Membres"
+  menu-roles: "Rôles"
+  menu-stats: "Statistiques"
+  menu-shop: "Boutique"
+  menu-relations: "Relations"
+  menu-logs: "Logs"
+  menu-success: "Succès"
+  menu-settings: "Paramètres"
+items:
+  banner:
+    slot: 4
+    material: WHITE_BANNER
+    name: "{guild_color}&l{guild_name} &8[{guild_color}{guild_tag}&8]"
+    lore:
+      - "&7Nom : &f{guild_name}"
+      - "&7Owner : &f{guild_owner}"
+      - "&7Création : &f{guild_created}"
+      - "&7MOTD : &f{guild_motd}"
+      - ""
+      - "&7Votre rôle : &f{guild_role}"
+      - "&7Chat de guilde : {guild_chat}"
+  head:
+    slot: 19
+    material: PLAYER_HEAD
+    skull-viewer: true
+    name: "&e&lMembres"
+    lore:
+      - "&7{guild_members} membre(s) &8| &a{guild_online} en ligne"
+      - ""
+      - "&eClic pour ouvrir"
+  roles:
+    slot: 20
+    permission: MANAGE_ROLES
+    material: GOLDEN_HELMET
+    name: "&6&lRôles"
+    lore:
+      - "&7Gérer les rôles de la guilde"
+      - ""
+      - "&eClic pour ouvrir"
+  stats:
+    slot: 22
+    material: EXPERIENCE_BOTTLE
+    name: "&a&lStatistiques"
+    lore:
+      - "&7Statistiques de la guilde"
+      - ""
+      - "&eClic pour ouvrir"
+  shop:
+    slot: 24
+    permission: SHOP
+    material: GOLD_NUGGET
+    name: "&6&lBoutique"
+    lore:
+      - "&7Boutique de la guilde"
+      - ""
+      - "&eClic pour ouvrir"
+  relations:
+    slot: 25
+    material: SHIELD
+    name: "&9&lRelations"
+    lore:
+      - "&7Ennemis et alliés"
+      - ""
+      - "&eClic pour ouvrir"
+  logs:
+    slot: 39
+    permission: LOGS
+    material: BOOK
+    name: "&f&lLogs"
+    lore:
+      - "&7Historique de la guilde"
+      - ""
+      - "&eClic pour ouvrir"
+  success:
+    slot: 40
+    material: NETHER_STAR
+    name: "&d&lSuccès"
+    lore:
+      - "&7Succès de la guilde"
+      - ""
+      - "&eClic pour ouvrir"
+  settings:
+    slot: 41
+    material: REDSTONE
+    name: "&c&lParamètres"
+    lore:
+      - "&7Paramètres de la guilde"
+      - ""
+      - "&eClic pour ouvrir"

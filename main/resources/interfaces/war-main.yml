@@ -1,0 +1,56 @@
+# ============================================================
+#  SwiftPvP-Guild - interfaces/war-main.yml
+#  Une interface = un fichier. Tout est modifiable : title, size (9 à 54, multiple de 9),
+#  filler, decorations, et pour chaque item : slot, material, name, lore, amount, glow,
+#  custom-model-data, hide-flags, hide-tooltip, skull-viewer, enabled (false = item retiré),
+#  permission (permission de rôle requise pour voir l'item).
+#  Couleurs avec &. Variables entre accolades propres à chaque interface (voir plus bas).
+#  Les placeholders PlaceholderAPI (%...%) fonctionnent dans les noms et lores.
+#  /guild reload recharge ce fichier.
+# ============================================================
+
+# ------------------------------------------------------------
+# /guild war : liste des guerres
+# Modèles de guerre. Variables : {a} {b} {state} {objective} {minutes} {time}
+# ------------------------------------------------------------
+title: "&8Guerres"
+size: 54
+filler:
+  enabled: false
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+war-slots: "0-44"
+texts:
+  active: "&aEn cours"
+  ended: "&7Terminée"
+  time-left: "&7Temps restant : &f{time}"
+items:
+  war-active:
+    material: RED_BANNER
+    name: "&f{a} &7VS &f{b}"
+    lore:
+      - "{state}"
+      - "&7Objectif : &f{objective} points"
+      - "{time}"
+      - ""
+      - "&eClic pour suivre la guerre"
+  war-ended:
+    material: GRAY_BANNER
+    name: "&f{a} &7VS &f{b}"
+    lore:
+      - "{state}"
+      - "&7Objectif : &f{objective} points"
+      - ""
+      - "&eClic pour voir le résultat"
+  new-war:
+    slot: 49
+    material: NETHERITE_SWORD
+    name: "&a&lNouvelle guerre"
+    lore:
+      - "&7Clic pour configurer une guerre"
+  new-war-locked:
+    slot: 49
+    material: BARRIER
+    name: "&c&lNouvelle guerre"
+    lore:
+      - "&cPermission START_WAR requise"

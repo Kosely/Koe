@@ -1,0 +1,25 @@
+name: SwiftPvP-Guild
+version: 1.0.1
+main: dev.koegoated.swiftguild.SwiftGuildPlugin
+api-version: '1.21'
+author: koegoated
+description: Système de Guilds, Alliances, Ennemis et Guerres pour SwiftPvP.
+softdepend: [PlaceholderAPI, SwiftPvP-Stats]
+
+commands:
+  guild:
+    description: Commande principale du système de Guild
+
+permissions:
+  swiftguild.use:
+    description: Utiliser /guild
+    default: true
+  swiftguild.admin.reload:
+    description: /guild reload
+    default: op
+  swiftguild.admin.enable:
+    description: /guild enable
+    default: op
+  swiftguild.admin.disable:
+    description: /guild disable
+    default: op

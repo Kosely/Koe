@@ -1,0 +1,85 @@
+# ============================================================
+#  SwiftPvP-Guild - interfaces/create.yml
+#  Une interface = un fichier. Tout est modifiable : title, size (9 à 54, multiple de 9),
+#  filler, decorations, et pour chaque item : slot, material, name, lore, amount, glow,
+#  custom-model-data, hide-flags, hide-tooltip, skull-viewer, enabled (false = item retiré),
+#  permission (permission de rôle requise pour voir l'item).
+#  Couleurs avec &. Variables entre accolades propres à chaque interface (voir plus bas).
+#  Les placeholders PlaceholderAPI (%...%) fonctionnent dans les noms et lores.
+#  /guild reload recharge ce fichier.
+# ============================================================
+
+# ------------------------------------------------------------
+# /guild (sans guilde) et /guild create : création de la guilde
+#  - name tag = TAG, papier = NOM (saisie dans le chat)
+#  - bannière verte : nom ET tag valides et disponibles
+#    bannière jaune : un seul des deux est valide / renseigné
+#    bannière rouge : aucun des deux n'est valide / renseigné
+# Variables : {name} {tag} {name_status} {tag_status} {player}
+# ------------------------------------------------------------
+title: "&8GUILD"
+size: 45
+filler:
+  enabled: false
+  material: GRAY_STAINED_GLASS_PANE
+  name: " "
+decorations:
+  glass:
+    slots: "0,1,7,8,9,17,27,35,36,37,43,44"
+    material: LIGHT_BLUE_STAINED_GLASS_PANE
+    name: " "
+    hide-tooltip: true
+texts:
+  unset: "&7(non défini)"
+  status-unset: "&cNon renseigné"
+  status-invalid: "&cInvalide"
+  status-taken: "&cDéjà utilisé"
+  status-ok: "&aDisponible"
+items:
+  tag:
+    slot: 20
+    material: NAME_TAG
+    name: "&b&lTag de la guilde"
+    lore:
+      - "&7Actuel : &f{tag}"
+      - "&7Statut : {tag_status}"
+      - ""
+      - "&7Lettres et chiffres uniquement, 3 minimum"
+      - "&eClic pour modifier (saisie dans le chat)"
+  name:
+    slot: 24
+    material: PAPER
+    name: "&b&lNom de la guilde"
+    lore:
+      - "&7Actuel : &f{name}"
+      - "&7Statut : {name_status}"
+      - ""
+      - "&7Lettres et chiffres uniquement, 3 minimum"
+      - "&eClic pour modifier (saisie dans le chat)"
+  confirm-ok:
+    slot: 22
+    material: LIME_BANNER
+    name: "&a&lCréer la guilde"
+    lore:
+      - "&7Nom : &f{name} {name_status}"
+      - "&7Tag : &f{tag} {tag_status}"
+      - ""
+      - "&aClic pour créer la guilde"
+  confirm-warn:
+    slot: 22
+    material: YELLOW_BANNER
+    name: "&e&lInformations incomplètes"
+    lore:
+      - "&7Nom : &f{name} {name_status}"
+      - "&7Tag : &f{tag} {tag_status}"
+      - ""
+      - "&eUne des deux informations est manquante ou indisponible"
+  confirm-error:
+    slot: 22
+    material: RED_BANNER
+    name: "&c&lImpossible de créer la guilde"
+    lore:
+      - "&7Nom : &f{name} {name_status}"
+      - "&7Tag : &f{tag} {tag_status}"
+      - ""
+      - "&cLe nom et le tag sont manquants ou indisponibles"
